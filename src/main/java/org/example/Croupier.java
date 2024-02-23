@@ -2,7 +2,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Croupier {
+public class Croupier implements CroupierInterface{
     private List<Carte> main;
 
     public Croupier() {

@@ -2,7 +2,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Joueur {
+public class Joueur implements JoueurInterface{
     private List<Carte> main;
 
     public Joueur() {

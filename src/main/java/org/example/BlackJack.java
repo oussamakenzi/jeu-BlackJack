@@ -7,7 +7,7 @@ public class BlackJack {
 
         System.out.println("---- Bienvenue au Blackjack! ----");
 
-        int soldeJetons = 200; // Solde initial des jetons
+        int soldeJetons = 200;
 
         while (true) {
             System.out.println("\n-- Menu principal --");
@@ -16,12 +16,12 @@ public class BlackJack {
             System.out.println("0- Quitter le jeu");
             System.out.print("Entrez votre choix: ");
             int choixMenu = scanner.nextInt();
-            scanner.nextLine(); // Pour consommer la ligne restante après la saisie du choix
+            scanner.nextLine();
 
             if (choixMenu == 1) {
-                System.out.print("Combien voulez-vous miser pour cette partie de jeu? ");
+                System.out.print("Combien voulez-vous miser pour cette partie de jeu? : ");
                 int mise = scanner.nextInt();
-                scanner.nextLine(); // Pour consommer la ligne restante après la saisie de la mise
+                scanner.nextLine();
                 if (mise > soldeJetons) {
                     System.out.println("Vous n'avez pas assez de jetons pour miser cette somme. Veuillez miser moins.");
                     continue;
@@ -29,7 +29,6 @@ public class BlackJack {
 
                 System.out.println(">>> Commencement du jeu");
 
-                // Initialiser le jeu
                 PaquetCartes paquet = new PaquetCartes();
                 paquet.melanger();
 

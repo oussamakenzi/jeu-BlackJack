@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
-public class PaquetCartes {
+public class PaquetCartes implements PaquetCarteInterface{
     private static List<Carte> listeCarte;
     private Random random;
 
@@ -32,13 +32,19 @@ public class PaquetCartes {
     }
 
     public void melanger() {
-        Collections.shuffle(listeCarte);
+        for (int i = 0; i < listeCarte.size(); i++) {
+            int j = random.nextInt(listeCarte.size());
+            Carte currCarte = listeCarte.get(i);
+            Carte randomCarte = listeCarte.get(j);
+            listeCarte.set(i, randomCarte);
+            listeCarte.set(j, currCarte);
+        }
     }
 
     public Carte tirerCarte() {
         if (listeCarte.isEmpty()) {
             throw new NoSuchElementException("Le paquet est vide");
         }
-        return listeCarte.remove(0); // Retire et renvoie la première carte du paquet
+        return listeCarte.remove(0);
     }
 }
